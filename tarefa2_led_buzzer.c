@@ -43,3 +43,9 @@ void init_gpio() {
     gpio_put(LED_RED, 0);
 
 }
+
+void control_led(uint8_t green, uint8_t blue, uint8_t red) {
+    gpio_put(LED_GREEN, green);
+    gpio_put(LED_BLUE, blue);
+    gpio_put(LED_RED, red);
+}
