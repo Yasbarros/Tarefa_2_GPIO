@@ -1,0 +1,4 @@
+[wokwi]
+version = 1
+firmware = 'build/tarefa2_led_buzzer.uf2'
+elf = 'build/tarefa2_led_buzzer.elf'
