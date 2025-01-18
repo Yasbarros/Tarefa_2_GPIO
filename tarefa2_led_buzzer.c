@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <string.h>         // Adicionado para corrigir o erro de 'strncmp'
 #include "pico/stdlib.h"
@@ -24,6 +25,12 @@ int main()
         }
     }
     return 0;
+}
+
+void activate_buzzer() {
+    gpio_put(BUZZER_PIN, 1);  // Liga o buzzer
+    sleep_ms(2000);           // Aguarda 2 segundos
+    gpio_put(BUZZER_PIN, 0);  //Desliga o buzzer
 }
 
 void init_gpio() {
