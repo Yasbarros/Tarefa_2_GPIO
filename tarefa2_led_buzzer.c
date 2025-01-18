@@ -3,7 +3,20 @@
 #include "pico/stdlib.h"
 #include "hardware/watchdog.h" // Necessário para o uso de watchdog_reboot
 
+// Definição dos GPIOs
+#define LED_GREEN 11
+#define LED_BLUE 12
+#define LED_RED 13
+#define BUZZER_PIN 21
 
+// Comprimentos dos comandos
+#define CMD_LEN_VERDE 5
+#define CMD_LEN_AZUL 4
+#define CMD_LEN_VERMELHO 8
+#define CMD_LEN_BRANCO 6
+#define CMD_LEN_OFF 3
+#define CMD_LEN_BUZZER 6
+#define CMD_LEN_REBOOT 6
 
 int main()
 {
