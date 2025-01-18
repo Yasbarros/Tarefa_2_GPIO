@@ -5,7 +5,26 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Protótipos das funções
+void init_gpio();
+void control_led(uint8_t green, uint8_t blue, uint8_t red);
+void activate_buzzer();
+void process_command(const char *command);
 int main()
+
 {
     stdio_init_all(); // Inicializa a UART
     init_gpio();      // Configuração inicial dos GPIOs
