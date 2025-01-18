@@ -1,27 +1,5 @@
-#include <stdio.h>
-#include <string.h>         // Adicionado para corrigir o erro de 'strncmp'
-#include "pico/stdlib.h"
-#include "hardware/watchdog.h" // Necessário para o uso de watchdog_reboot
-
-
-
-int main()
-{
-    stdio_init_all(); // Inicializa a UART
-    init_gpio();      // Configuração inicial dos GPIOs
-
-    printf("Sistema iniciado. Digite os comandos:\n");
-    printf("Para Ligar Led Verde, digite: verde\n");
-    printf("Para Ligar Led Vermelho, digite: vermelho\n");
-    printf("Para Ligar Led Azul, digite: azul\n");
-    printf("Para Ligar Led branco, digite: branco\n");
-    printf("Para Desligar todos os Leds, digite: off\n");
-    printf("Para Ligar Buzzer, digite: buzzer\n");
-
-
-    while (1) {
-        
-    }
-
-    return 0;
+void activate_buzzer() {
+    gpio_put(BUZZER_PIN, 1);  // Liga o buzzer
+    sleep_ms(2000);           // Aguarda 2 segundos
+    gpio_put(BUZZER_PIN, 0);  // Desliga o buzzer
 }
