@@ -37,14 +37,34 @@ int main(){
     printf("Para Desligar todos os Leds, digite: off\n");
     printf("Para Ligar Buzzer, digite: buzzer\n");
 
-    char command[32];
-    while (1) {
-        // Lê o comando via UART
-        if (fgets(command, sizeof(command), stdin)) {
-            process_command(command); // Processa o comando recebido
-        }
+    //loop principal
+    while (true) {
+        process_command(); // lê e processa o comando via UART
     }
-    return 0;
+
+    return 0;    
+}
+
+// Processamento dos comandos recebidos via UART
+void process_command() {
+    char command[32];
+    int i = 0;
+    char c;
+
+    // Lê um caractere por vez até encontrar o caractere de nova linha '\n' ou atingir o limite
+    while (i < sizeof(command) - 1) {
+        c = getchar();  // Lê um caractere via UART
+        
+        if (c == '\n' || c == '\r') {
+            command[i] = '\0';  // Finaliza a string
+            break;  // Sai do loop quando o comando é completo
+        }
+        
+        command[i++] = c;  // Adiciona o caractere ao buffer de comando
+    }
+
+    // Processa o comando
+    process_command_logic(command);
 }
 
 void activate_buzzer() {
