@@ -42,5 +42,9 @@ void init_gpio() {
     gpio_set_dir(LED_RED, GPIO_OUT);
     gpio_put(LED_RED, 0);
 
+    // configuração do buzzer como saída
+    gpio_init(BUZZER_PIN);
+    gpio_set_dir(BUZZER, GPIO_OUT);
+    gpio_put(BUZZER_PIN, 0);
 }
 
