@@ -18,10 +18,12 @@ int main()
     printf("Para Desligar todos os Leds, digite: off\n");
     printf("Para Ligar Buzzer, digite: buzzer\n");
 
-
+    char command[32];
     while (1) {
-        
+        // Lê o comando via UART
+        if (fgets(command, sizeof(command), stdin)) {
+            process_command(command); // Processa o comando recebido
+        }
     }
-
     return 0;
 }
