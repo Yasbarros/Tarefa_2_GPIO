@@ -54,4 +54,13 @@ int main()
     while (1) {
         
     }
+
+    return 0;
+}
+
+void init_gpio() {
+    gpio_init(LED_GREEN);
+    gpio_set_dir(LED_GREEN, GPIO_OUT);
+    gpio_put(LED_GREEN, 0);
+
 }
