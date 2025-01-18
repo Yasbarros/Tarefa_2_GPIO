@@ -19,7 +19,10 @@ int main()
     printf("Para Ligar Buzzer, digite: buzzer\n");
 
 
-    while (1) {
-        
-    }
+    char command[32];
+    while (true) {
+        // Lê o comando via UART
+        if (fgets(command, sizeof(command), stdin)) {
+            process_command(command); // Processa o comando recebido
+        }
 }
