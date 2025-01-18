@@ -3,8 +3,6 @@
 #include "pico/stdlib.h"
 #include "hardware/watchdog.h" // Necessário para o uso de watchdog_reboot
 
-
-
 int main()
 {
     stdio_init_all(); // Inicializa a UART
@@ -26,4 +24,15 @@ int main()
         }
     }
     return 0;
+}
+
+void init_gpio() {
+    //Inicialização dos leds azul e vermelho
+    gpio_init(LED_BLUE);
+    gpio_set_dir(LED_BLUE, GPIO_OUT);
+    gpio_put(LED_BLUE, 0);
+    gpio_init(LED_RED);
+    gpio_set_dir(LED_RED, GPIO_OUT);
+    gpio_put(LED_RED, 0);
+
 }
