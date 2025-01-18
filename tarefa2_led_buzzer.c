@@ -23,7 +23,7 @@
 void init_gpio();
 void control_led(uint8_t green, uint8_t blue, uint8_t red);
 void activate_buzzer();
-void process_command(const char *command);
+void process_command_logic(const char *command);
 
 int main(){
     stdio_init_all(); // Inicializa a UART
@@ -88,7 +88,7 @@ void init_gpio() {
 
     // configuração do buzzer como saída
     gpio_init(BUZZER_PIN);
-    gpio_set_dir(BUZZER, GPIO_OUT);
+    gpio_set_dir(BUZZER_PIN, GPIO_OUT);
     gpio_put(BUZZER_PIN, 0);
 }
 
