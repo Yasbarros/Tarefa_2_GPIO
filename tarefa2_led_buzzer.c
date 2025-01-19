@@ -24,6 +24,7 @@ void init_gpio();
 void control_led(uint8_t green, uint8_t blue, uint8_t red);
 void activate_buzzer();
 void process_command_logic(const char *command);
+void process_command();
 
 int main(){
     stdio_init_all(); // Inicializa a UART
@@ -65,6 +66,35 @@ void process_command() {
 
     // Processa o comando
     process_command_logic(command);
+}
+
+// Função lógica para processar o comando
+void process_command_logic(const char *command) {
+    if (strncmp(command, "verde", CMD_LEN_VERDE) == 0) {
+        control_led(1, 0, 0); // Liga o LED verde
+        printf("LED Verde ligado.\n");
+    } else if (strncmp(command, "azul", CMD_LEN_AZUL) == 0) {
+        control_led(0, 1, 0); // Liga o LED azul
+        printf("LED Azul ligado.\n");
+    } else if (strncmp(command, "vermelho", CMD_LEN_VERMELHO) == 0) {
+        control_led(0, 0, 1); // Liga o LED vermelho
+        printf("LED Vermelho ligado.\n");
+    } else if (strncmp(command, "branco", CMD_LEN_BRANCO) == 0) {
+        control_led(1, 1, 1); // Liga todos os LEDs (branco)
+        printf("Todos os LEDs ligados (luz branca).\n");
+    } else if (strncmp(command, "off", CMD_LEN_OFF) == 0) {
+        control_led(0, 0, 0); // Desliga todos os LEDs
+        printf("Todos os LEDs desligados.\n");
+    } else if (strncmp(command, "buzzer", CMD_LEN_BUZZER) == 0) {
+        activate_buzzer();    // Ativa o buzzer
+        printf("Buzzer ativado por 2 segundos.\n");
+    } else if (strncmp(command, "reboot", CMD_LEN_REBOOT) == 0) {
+        printf("Reiniciando o sistema...\n");
+        sleep_ms(1000);
+        watchdog_reboot(0, 0, 0); // Reinicia o sistema
+    } else {
+        printf("Comando invalido: %s\n", command);
+    }
 }
 
 void activate_buzzer() {
