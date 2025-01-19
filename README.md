@@ -77,5 +77,6 @@ Os comandos são enviados via UART (usando ferramentas como PuTTY ou minicom):
 - Utilize resistores adequados para evitar danos aos LEDs.
 - Certifique-se de que a conexão do buzzer está correta para evitar mau funcionamento.
 
-[Assista ao vídeo no YouTube]([https://www.youtube.com/watch?v=ID_DO_VIDEO](https://youtube.com/shorts/9hmxpylxr4s))
+[Assista ao vídeo no YouTube](https://www.youtube.com/watch?9hmxpylxr4s)
+
 
