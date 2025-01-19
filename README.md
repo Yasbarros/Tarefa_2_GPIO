@@ -66,7 +66,7 @@ Os comandos são enviados via UART (usando ferramentas como PuTTY ou minicom):
    cd <PASTA_DO_PROJETO>
    ```
 
-2. Compile o código:
+2. Compile o código
 
 3. Envie o arquivo `.uf2` para o Raspberry Pi Pico:
    - Conecte o Pico ao computador em modo bootloader.
