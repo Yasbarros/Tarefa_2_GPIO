@@ -72,11 +72,26 @@ Os comandos são enviados via UART (usando ferramentas como PuTTY ou minicom):
    - Conecte o Pico ao computador em modo bootloader.
    - Copie o arquivo `.uf2` gerado para o dispositivo USB montado.
 
+4. Identifique a porta serial que o Raspberry Pi Pico está conectado
+
+5. No putty, selecione a opção _serial_:
+   - Na caixa _serial line_, digite a porta COM identificada no passo 4.
+   - Em _speed_, digite o valor _115200_.
+
+6. Aperte a opção _open_ e digite os comandos:
+   - Para ligar o led verde, _verde_.
+   - Para ligar o led vermelho, _vermelho_.
+   - Para ligar o led azul, _azul_.
+   - Para ligar todos os leds, _branco_.
+   - Para desligar os leds, _off_.
+   - Para ligar o buzzer, _buzzer_.
+   - Para reiniciar o sistema, _reboot_.
+
+
 ## Observações
 
 - Utilize resistores adequados para evitar danos aos LEDs.
 - Certifique-se de que a conexão do buzzer está correta para evitar mau funcionamento.
 
-[Clique aqui ⬆️ e assista o vídeo](https://youtube.com/shorts/9hmxpylxr4s)
-
+[Clique aqui ⬆️ e assista o vídeo](https://youtu.be/e8moQTt2UPw)
 
